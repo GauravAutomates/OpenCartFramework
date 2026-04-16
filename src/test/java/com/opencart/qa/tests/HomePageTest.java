@@ -13,11 +13,14 @@ import com.opencart.qa.utils.AppConstants;
 public class HomePageTest extends BaseTest{
 	
 	
+	
 	@BeforeClass
 	public void homePageSetup() {
 		homePage = loginPage.doLogin(prop.getProperty("username").trim(), prop.getProperty("password").trim());
 	}
 
+	
+	//this are the test methods
 	@Test
 	public void homePageTitleTest() {
 		String homePageActTitle = homePage.getHomePageTitle();
