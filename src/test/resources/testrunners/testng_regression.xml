@@ -1,13 +1,16 @@
-<suite name="Open Cart Test Regression Suite" verbose="3" parallel="tests"
-	thread-count="3">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Open Cart Test Regression Suite" verbose="3"
+	parallel="tests" thread-count="4">
 
 
-	<listeners>
-		<listener
-			class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
+    <listeners>
+		<listener class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
 		<listener class-name="com.opencart.qa.listeners.TestAllureListener" />
 		<listener class-name="com.opencart.qa.listeners.AnnotationTransformer" />
 	</listeners>
+
 
 	<test name="Login Page Test">
 		<parameter name="browser" value="chrome" />
@@ -18,22 +21,30 @@
 	</test>
 
 
-	<test name="Home Page Test">
-		<parameter name="browser" value="chrome" />
+	 <test name="Home Page Test">
+		<parameter name="browser" value="firefox" />
 
 		<classes>
 			<class name="com.opencart.qa.tests.HomePageTest" />
 		</classes>
-	</test>
+	</test> 
 
 
-	<test name="Product Info Page Test">
+	 <test name="Product Info Page Test">
 		<parameter name="browser" value="chrome" />
 
 		<classes>
 			<class name="com.opencart.qa.tests.ProductInfoPageTest" />
 		</classes>
 	</test>
+	
+	
+	<test name="Register Page Test">
+		<parameter name="browser" value="firefox" />
 
+		<classes>
+			<class name="com.opencart.qa.tests.RegisterPageTest" />
+		</classes>
+	</test>
 
 </suite>
